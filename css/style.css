@@ -1,0 +1,295 @@
+/* ==========================================================================
+   Color Variables & Layout Tokens
+   ========================================================================== */
+:root {
+    /* Fonts */
+    --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    --bg-color: #fff6dc;         /* Warm cream base */
+    --text-color: #0f1424;       /* Deep ink indigo */
+    --text-muted: #525c7a;       /* Muted slate blue */
+    --primary-brand: #701c11;    /* Vibrant electric indigo */
+    --accent-hover: #0a06d9;     /* Warm amber */
+    --border-color: #701c11;     /* Crisp, subtle borders */
+    --social-bg: #cab0b0;          /* Soft button containers */
+    --transition-speed: 0.25s;
+}
+
+body.dark-mode {
+    --bg-color: #181818;         /* Deep obsidian night */
+    --text-color: #f1f3f9;       /* Off-white ice */
+    --text-muted: #8c9bb4;       /* Soft sky gray */
+    --primary-brand: #f88181;    /* Luminous indigo accent */
+    --accent-hover: #0b22f5;     /* Vivid gold/amber */
+    --border-color: #770400;     /* Deep framing borders */
+    --social-bg: #ffa6a6;  /* Raised card dark backgrounds */
+    --social-hover: #d8dff0;
+}
+
+/* ==========================================================================
+   General / Base Styles
+   ========================================================================== */
+
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+a {
+    color: var(--primary-brand);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 24px 60px;
+    border-bottom: 1px solid var(--border-color);
+    transition: border-color var(--transition-speed) ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    white-space: nowrap;
+    color: var(--primary-brand);
+}
+
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+nav {
+    display: flex;
+    gap: 40px; 
+}
+
+nav a {
+    color: var(--text-muted);
+}
+
+nav a:hover {
+    color: var(--primary-brand);
+}
+
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px; /* Slightly increased targets for better accessibility */
+    border-radius: 8px;
+    transition: background-color var(--transition-speed);
+}
+
+#theme-toggle:hover {
+    background-color: #e2e5ec;
+}
+
+#theme-toggle img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+/* ==========================================================================
+   Main Content
+   ========================================================================== */
+
+main {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 24px;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 32px;
+    }
+}
+
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(15, 20, 36, 0.08); /* Adjusted to match new deep text base */
+}
+
+body.dark-mode .profile-image img {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.profile-text h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+    text-align: center;
+    padding: 40px 24px;
+    max-width: 800px;
+    margin: 120px auto 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    transition: border-color var(--transition-speed) ease;
+}
+
+.footer-email {
+    margin-bottom: 24px;
+}
+
+footer a {
+    color: var(--primary-brand);
+}
+
+footer a:hover {
+    color: var(--accent-hover);
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.social-links a {
+    width: 44px;
+    height: 44px;
+    background-color: var(--social-bg);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    background-color: var(--social-hover);
+}
+
+.social-links img {
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================
+   WRITINGS PAGE
+========================== */
+
+.writings {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.writings h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.page-description {
+    text-align: left;
+    color: --border-color;
+    margin-bottom: 40px;
+}
+
+/* Grid Layout */
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Individual Cards */
+
+.article-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    background: --bg-color;
+    border: 1px solid #0f1424;
+    border-radius: 12px;
+
+    padding: 24px;
+
+    transition: all 0.25s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 10px #701c11;
+    border-color: #701c11;
+}
+
+.article-card h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.article-card p {
+    color:#701c11;
+    line-height: 1.5;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+}
