@@ -5,10 +5,10 @@
     /* Fonts */
     --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     
-    --bg-color: #fff6dc;         /* Warm cream base */
+    --bg-color: #fcf0fb;         /* Warm cream base */
     --text-color: #0f1424;       /* Deep ink indigo */
     --text-muted: #525c7a;       /* Muted slate blue */
-    --primary-brand: #701c11;    /* Vibrant electric indigo */
+    --primary-brand: #3e60c7;    /* Vibrant electric indigo */
     --accent-hover: #0a06d9;     /* Warm amber */
     --border-color: #701c11;     /* Crisp, subtle borders */
     --social-bg: #cab0b0;          /* Soft button containers */
