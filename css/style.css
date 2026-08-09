@@ -138,19 +138,21 @@ main {
         gap: 32px;
     }
 }
-/* 1. Target the flex container wrapper */
+/* 1. Target the div container wrapper */
 .profile-image {
     width: 200px;
     height: 200px;
-    flex-shrink: 0; /* Stops flexbox from crushing the wrapper width */
+    min-width: 200px; /* Prevents flexbox from crushing wrapper width */
+    flex-shrink: 0;   /* Enforces fixed size in flexbox layout */
 }
 
-/* 2. Target the actual image inside the wrapper */
+/* 2. Target the image inside the wrapper */
 .profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    display: block;
     box-shadow: 0 4px 20px rgba(15, 20, 36, 0.08);
 }
 
