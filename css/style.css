@@ -161,6 +161,16 @@ body.dark-mode .profile-image img {
     color: var(--text-color);
 }
 
+
+.tile-image img {
+    width: 15rem;
+    height: 20rem;
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(15, 20, 36, 0.08); /* Adjusted to match new deep text base */
+}
+
+
 /* ==========================================================================
    Footer
    ========================================================================== */
