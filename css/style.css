@@ -243,7 +243,7 @@ footer a:hover {
 
 .page-description {
     text-align: left;
-    color: --border-color;
+    color: var(--border-color);
     margin-bottom: 40px;
 }
 
@@ -312,3 +312,70 @@ footer a:hover {
     line-height: 1.6;
     white-space: pre-line; /* Preserves line breaks and handles wrapping */
   }
+
+
+  /* ==========================
+   Mobile compatibility fixes
+========================== */
+
+/* Prevent image and media overflow on small screens */
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   Mobile Responsive Adjustments (< 768px)
+   ========================================================================== */
+
+   @media (max-width: 768px) {
+    /* Stack header contents vertically */
+    header {
+        flex-direction: column;
+        padding: 16px 20px;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .header-right {
+        margin-left: 0;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    /* Reduce huge vertical margins on mobile viewports */
+    main {
+        margin: 36px auto;
+        padding: 0 16px;
+    }
+
+    footer {
+        margin: 60px auto 0;
+        padding: 24px 16px;
+    }
+
+    /* Adjust headings for mobile screens */
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Ensure card tiles pad nicely on narrow screens */
+    .article-card {
+        padding: 18px;
+    }
+
+    /* Adjust story container text size for phone readability */
+    .story-container {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
