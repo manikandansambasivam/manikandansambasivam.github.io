@@ -8,11 +8,11 @@ async function loadComponent(id, file) {
 }
 
 async function loadPageComponents() {
-    await loadComponent("header", "components/header.html");
-    await loadComponent("footer", "components/footer.html");
+    await loadComponent("header", "../..//components/header.html");
+    await loadComponent("footer", "../../components/footer.html");
 
     const themeScript = document.createElement("script");
-    themeScript.src = "js/theme.js";
+    themeScript.src = "../../js/theme.js";
     document.body.appendChild(themeScript);
 }
 

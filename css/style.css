@@ -293,3 +293,12 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+.story-container {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    white-space: pre-line; /* Preserves line breaks and handles wrapping */
+  }
