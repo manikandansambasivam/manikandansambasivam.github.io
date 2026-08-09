@@ -5,11 +5,11 @@
     /* Fonts */
     --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     
-    --bg-color: #fcf0fb;         /* Warm cream base */
+    --bg-color: #fcf0fb;        
     --text-color: #0f1424;       /* Deep ink indigo */
     --text-muted: #525c7a;       /* Muted slate blue */
-    --primary-brand: #3e60c7;    /* Vibrant electric indigo */
-    --accent-hover: #0a06d9;     /* Warm amber */
+    --primary-brand: #3e60c7;    
+    --accent-hover: #0a06d9;     
     --border-color: #701c11;     /* Crisp, subtle borders */
     --social-bg: #cab0b0;          /* Soft button containers */
     --transition-speed: 0.25s;
@@ -167,7 +167,7 @@ body.dark-mode .profile-image img {
     line-height: 1.15;
     margin-top: 0;
     margin-bottom: 16px;
-    color: var(--text-color);
+    color: var(--primary-brand);
 }
 
 
@@ -248,6 +248,22 @@ footer a:hover {
 .writings h1 {
     text-align: center;
     margin-bottom: 10px;
+    color: var(--primary-brand);
+    font-size: 2rem;
+}
+
+.writings h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-size: 1.75rem;
+}
+
+.writings h3 {
+    text-align: center;
+    color: var(--primary-brand);
+    font-size: 1.2rem;
+  
 }
 
 .page-description {
