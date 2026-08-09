@@ -138,13 +138,18 @@ main {
         gap: 32px;
     }
 }
+/* Prevent flexbox from squeezing the profile image container */
+.profile-image {
+    flex-shrink: 0;
+}
 
 .profile-image img {
-    width: 20rem;
-    height: 20rem;
-    border-radius: 20rem;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    box-shadow: 0 4px 20px rgba(15, 20, 36, 0.08); /* Adjusted to match new deep text base */
+    border-radius: 50%;
+    flex-shrink: 0; /* Ensures the image maintains its 1:1 circular aspect ratio */
+    box-shadow: 0 4px 20px rgba(15, 20, 36, 0.08);
 }
 
 body.dark-mode .profile-image img {
