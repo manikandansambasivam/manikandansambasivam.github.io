@@ -287,8 +287,8 @@ footer a:hover {
     text-decoration: none;
     color: inherit;
 
-    background: --bg-color;
-    border: 1px solid #0f1424;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
 
     padding: 24px;
@@ -298,8 +298,8 @@ footer a:hover {
 
 .article-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 10px #701c11;
-    border-color: #701c11;
+    box-shadow: 0 10px 10px var(--border-color);
+    border-color: var(--border-color);
 }
 
 .article-card h2 {
@@ -309,7 +309,7 @@ footer a:hover {
 }
 
 .article-card p {
-    color:#701c11;
+    color: var(--text-muted);
     line-height: 1.5;
 }
 
@@ -335,8 +335,90 @@ footer a:hover {
     font-family: Georgia, serif;
     font-size: 1.125rem;
     line-height: 1.6;
-    white-space: pre-line; /* Preserves line breaks and handles wrapping */
-  }
+}
+
+.story-container h2 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+}
+
+.story-container p[data-lang="ta"] {
+    font-family: var(--font-primary);
+}
+
+/* Bilingual reading toggle */
+
+.story-toolbar {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    max-width: 700px;
+    margin: 0 auto 24px;
+}
+
+.story-toolbar button {
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.story-toolbar button[aria-pressed="true"] {
+    background-color: var(--primary-brand);
+    color: var(--bg-color);
+    border-color: var(--primary-brand);
+}
+
+.story-container[data-lang-filter="en"] p[data-lang="ta"],
+.story-container[data-lang-filter="ta"] p[data-lang="en"] {
+    display: none;
+}
+
+/* Breadcrumb */
+
+.story-breadcrumb {
+    max-width: 700px;
+    margin: 0 auto 24px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 8px;
+}
+
+.story-breadcrumb a {
+    color: var(--text-muted);
+}
+
+.story-breadcrumb a:hover {
+    color: var(--primary-brand);
+}
+
+/* Prev / next pagination */
+
+.story-pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 700px;
+    margin: 48px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.story-pagination a[aria-disabled="true"] {
+    visibility: hidden;
+}
+
+.story-pagination-next {
+    text-align: right;
+}
 
 
   /* ==========================

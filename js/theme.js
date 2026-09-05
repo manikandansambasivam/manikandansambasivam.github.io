@@ -1,18 +1,8 @@
 const toggleButton = document.getElementById("theme-toggle");
 
 if (toggleButton) {
-    const toggleIcon = toggleButton.querySelector("img");
-
-    const lightIcon = "assets/images/ld.svg";
-    const darkIcon = "assets/images/ld.svg";
-
     function setTheme(theme) {
         document.body.classList.toggle("dark-mode", theme === "dark");
-
-        if (toggleIcon) {
-            toggleIcon.src = theme === "dark" ? darkIcon : lightIcon;
-        }
-
         localStorage.setItem("theme", theme);
     }
 
@@ -45,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const href = link.getAttribute("href");
         
         // Handle matching for exact paths or matching file names (e.g., research.html)
-        if (currentPath.endsWith(href) || 
-           (href === "index.html" && (currentPath === "/" || currentPath.endsWith("/")))) {
+        if (currentPath.endsWith(href) ||
+           (href === "/index.html" && (currentPath === "/" || currentPath.endsWith("/")))) {
             link.setAttribute("aria-current", "page");
         }
     });

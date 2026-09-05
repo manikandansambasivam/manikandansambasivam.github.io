@@ -1,15 +1,12 @@
 async function loadPost() {
     const postContent = document.getElementById("post-content");
-    const parameters = new URLSearchParams(window.location.search);
-    const postName = parameters.get("name");
 
-    if (!postName || !/^[a-zA-Z0-9-]+$/.test(postName)) {
-        postContent.textContent = "Post not found.";
-        return;
-    }
+    if (!postContent) return;
+
+    const mdPath = window.location.pathname.replace(/\.html$/, ".md");
 
     try {
-        const response = await fetch(`blogs/${postName}.md`);
+        const response = await fetch(mdPath);
 
         if (!response.ok) {
             throw new Error("Post could not be loaded.");
@@ -18,15 +15,13 @@ async function loadPost() {
         const markdown = await response.text();
         postContent.innerHTML = marked.parse(markdown);
 
-        const heading = postContent.querySelector("h1");
+        const heading = postContent.querySelector("h2");
 
         if (heading) {
-            document.title = `${heading.textContent} | T. R. Harikrishnan`;
+            document.title = `${heading.textContent.trim()} | Manikandan Sambasivam`;
         }
-        if (window.MathJax) {
-            await MathJax.startup.promise;
-            await MathJax.typesetPromise([postContent]);
-        }
+
+        initStoryPage();
     } catch (error) {
         postContent.textContent = "Post could not be loaded.";
         console.error(error);
